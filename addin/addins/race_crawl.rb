@@ -18,10 +18,7 @@ require File.expand_path('../../../race', __FILE__)
 
     params race_url: nil, start_id: nil, end_id: nil
 
-
     logic do
-
-      binding.pry
       
       race_url = params.race_url
       start_id = params.start_id
@@ -84,7 +81,7 @@ require File.expand_path('../../../race', __FILE__)
               race.save
 
               p race
-              puts "request #{race_url}  success"
+              puts "\nrequest #{race_url}  successfully"
             else
               puts "request #{race_url}  failed"
             end

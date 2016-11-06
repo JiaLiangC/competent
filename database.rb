@@ -50,11 +50,15 @@ module DataBase
       end
       query_fields = res.join(",")
 
-      "UPDATE #{table_name} #{query_fields} where id = #{id}"
+      query_str = "UPDATE #{table_name} #{query_fields} where id = #{id}"
+      puts query_str
+      query_str
     end
 
     def where_query(table_name, condition)
-      "SELECT * FROM #{table_name} where #{condition}"
+      query_str = "SELECT * FROM #{table_name} where #{condition}"
+      puts query_str
+      query_str
     end
 
   # end
@@ -74,6 +78,7 @@ module DataBase
     # 创建races 表语句
     create_race  = <<-SQL
       create table races(
+      id INTEGER PRIMARY KEY,
       name varchar(255),
       start_date varchar(255),
       end_date varchar(255),
@@ -85,16 +90,17 @@ module DataBase
     SQL
     #取得db的路径../data/race.db
     # 创建db
-    puts db_path
     db = SQLite3::Database.new(db_path)
     #执行创建表语句
     db.execute(create_race)
-    puts "created success"
+    puts create_race
+    puts "created successfully"
   end
 
   # 删除数据库
   def self.db_reset
     File.delete(db_path) if File.exist?(db_path)
+    puts "deleted successfully"
   end
 
 end
