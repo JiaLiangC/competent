@@ -2,8 +2,8 @@
   base_url: "http://www.runchina.org.cn"
   race_url: "http://www.runchina.org.cn/portal.php?mod=calendar&ac=detail&"
 - 
-  base_url: ""
-  race_url: ""
+  base_url: "http://www.51sai.com"
+  race_url: "http://www.51sai.com/"
 - 
   base_url: ""
   race_url: ""

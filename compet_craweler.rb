@@ -21,18 +21,28 @@ require File.expand_path('../addin/addins', __FILE__)
   end
 
   sites = load_sites
-  race_url = sites[0]["race_url"]
 
-  race_crawler = AddinStore.find{ |addin|
+  # race0_url = sites[0]["race_url"]
+
+  # race_crawler0 = AddinStore.find{ |addin|
+  #   addin.meta.title == "Race Crawler0"
+  # }.first
+
+  # race_crawler0.params.race_url = race0_url
+  # race_crawler0.params.start_id = 723
+  # race_crawler0.params.end_id = nil
+  # race_crawler0.run
+
+
+  race1_url = sites[1]["race_url"]
+
+  race_crawler1 = AddinStore.find{ |addin|
     addin.meta.title == "Race Crawler1"
   }.first
 
-  race_crawler.params.race_url = race_url
-  race_crawler.params.start_id = 723
-  race_crawler.params.end_id = nil
+  race_crawler1.params.race_url = race1_url
+  race_crawler1.params.start_id = 169
+  race_crawler1.params.end_id = 5104
+  race_crawler1.run
 
-  race_crawler.run
 
-
-  # end
-# end

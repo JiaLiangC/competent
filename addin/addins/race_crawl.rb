@@ -11,7 +11,7 @@ require File.expand_path('../../../race', __FILE__)
   puts "in #{File.basename(__FILE__)} class  #{self.class}"
 
   addin do
-    meta title: "Race Crawler1",
+    meta title: "Race Crawler0",
     author: "xiaoliangCai" ,
     version: "v1.0",
     tag: "data/crawler"
@@ -77,6 +77,8 @@ require File.expand_path('../../../race', __FILE__)
               race.groups = groups
               race.org_url = org_web_url
               race.site_url = uri
+
+              next if  Race.where("name='#{name}'") != []
 
               race.save
 

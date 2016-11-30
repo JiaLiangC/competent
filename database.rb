@@ -55,7 +55,7 @@ module DataBase
       query_str
     end
 
-    def where_query(table_name, condition)
+    def self.where_query(table_name, condition)
       query_str = "SELECT * FROM #{table_name} where #{condition}"
       puts query_str
       query_str
